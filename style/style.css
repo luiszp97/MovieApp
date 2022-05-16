@@ -86,7 +86,7 @@ header{
 
 .notification-button{
     cursor: pointer;
-    background-image: url(/assets/notification.png);
+    background-image: url(/MovieApp/assets/notification.png);
     background-size: cover;
     width: 15px;
     height: 15px;
@@ -108,7 +108,7 @@ header{
     height: 30px;
 }
 .serch-icon{
-    background-image: url(/assets/serch.png);
+    background-image: url(/MovieApp/assets/serch.png);
     background-size: cover;
     width: 10px;
     height: 10px;
@@ -141,7 +141,7 @@ header{
 }
 
 .serch-voice{
-    background: url(/assets/Vector.svg);
+    background: url(/MovieApp/assets/Vector.svg);
     background-size: contain;
     background-repeat: no-repeat;
     width: 15px;
