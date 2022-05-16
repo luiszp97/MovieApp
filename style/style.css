@@ -181,7 +181,7 @@ header{
     display: flex;
     gap: 20px;
     margin: 10px 10px 0px 10px;
-    width: 250vw;
+    width: auto;
     height: 100%;
 }
 
