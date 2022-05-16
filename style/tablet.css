@@ -39,11 +39,13 @@ header{
 
 .movie-popular-container{
     height: auto;
+    width: 50vw;
 }
 
 .movie-popular-img{
     position: absolute;
-    top: -50%;
+    top: -18vh;
+    
 }
 
 .notification-button{
