@@ -1,0 +1,125 @@
+header{
+    height: 70px;
+}
+
+.notification-button-header{
+    display: block;
+    cursor: pointer;
+    background-image: url(/assets/notification.png);
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+}
+
+.logo-moviApp-container{
+    margin-left: 20px;
+}
+
+.logo-img{
+    width: 50px;
+    height: 50px;
+}
+.name-app{
+    font-size: 2rem;
+}
+
+.my-account{
+    font-size: 1.5rem;
+    margin-right: 20px;
+}
+
+.most-popular-main-container{
+    height: 180px;
+}
+
+.most-pupulra-container{
+    margin: 10px 15px 0px 15px;
+}  
+
+.movie-popular-container{
+    height: auto;
+}
+
+.movie-popular-img{
+    position: absolute;
+    top: -50%;
+}
+
+.notification-button{
+    display: none;
+}
+
+.greeting-txt-1{
+    font-size: 1.8rem;
+}
+
+.greeting-txt-2{
+    font-size: 1.8rem;
+}
+
+.serch-icon-container{
+    width: 50px;
+    height: 40px;
+}
+
+.serch-icon{
+    width: 16px;
+    height: 16px;
+}
+
+.serch-button{
+    width: 75vw;
+}
+
+.voice-button-container{
+    height: 40px;
+}
+
+.serch-voice{
+    width: 33px;
+    height: 25px;
+}
+
+.titles-container{
+    padding-left: 5%;
+    margin: 25px 0px 15px 0px;
+}
+
+.titles{
+    font-size: 1.8rem; 
+}
+
+.categories-main-container{
+    margin-top: 40px;
+}
+
+.categories-container{
+    width: 80px;
+    height: 100px;
+}
+
+.img-categorie{
+    width: 40px;
+    height: 40px;
+}
+
+.title-genres{
+    font-size: 1.2rem;
+}
+
+.movie-uncoming-main-container{
+    height: 350px;
+}
+
+.movie-uncoming-container::-webkit-scrollbar{
+    display: none;
+}
+.movie-uncoming-container{
+    width: 250px;
+    height: 320px;
+}
+
+.powerby{
+    font-size: 1.5rem;
+}

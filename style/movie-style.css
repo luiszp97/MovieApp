@@ -1,0 +1,220 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+body{
+    background: linear-gradient(270deg, #4E4376 20%, #2B5876 100% );
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.733);
+    border-radius: 5px;
+    background: linear-gradient(270deg, #3c3260 20%, #234c68 100% );
+}
+
+.movie-img-container{
+    position: relative;
+    width: 100%;
+    height: 50%;
+}
+
+.movie-img{
+    width: 100%;
+    height: 100%;
+}
+
+.undo-icon{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0.194);
+    border-radius: 50%;
+    margin: 10px 0 0 10px;
+}
+
+.undo-icon span{
+    display: inline-block;
+    background: url(/assets/undo-alt-free-icon-font.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    width: 15px;
+    height: 15px;
+    margin: 5px 0 0 5px;
+}
+
+.info-movie-container{
+    position: absolute;
+    top: 235px;
+    width: 100%;
+    height: 55%;
+    padding: 0px 20px 0 20px;
+
+    border-left: 1px solid #33698d;
+    border-right: 1px solid #57498a;
+    border-top: 1px solid #33698d;
+    border-radius: 30px 30px 0 0 ;
+    background: linear-gradient(270deg, #4E4376 20%, #2B5876 100% );
+}
+
+.title-movie-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main-title{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+
+    margin-top: 10px;
+}
+
+.subtitle{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #C4C4C4;  
+}
+
+.categorie-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    margin-top: 10px;
+}
+
+.categirie-movie{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 60%;
+}
+
+.categirie-movie p{
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+
+    background-color: #ffffff44;
+    padding: 3px 7px 3px 7px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 30%);
+
+}
+
+.categirie-movie .imdb{
+    background-color: #F5C518;
+    color: black;
+}
+
+.fav-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 30%;
+}
+
+.fav-container button{
+    cursor: pointer;
+    width: 20px;
+    height: 25px;
+    
+    border: hidden;
+}
+
+.fav-container .fav{
+    background: url(/assets/heart.svg);
+    background-size: cover;
+    height: 20px;
+   
+}
+
+.fav-container .fav-click{
+    background: url(/assets/heart-lleno.svg);
+    background-size: cover;
+    height: 20px;
+}
+    
+.fav-container .share{
+    background: url(/assets/share.svg);
+    background-size: cover;
+}
+
+.description-movie-container{
+    margin-top: 10px;
+}
+
+.description-movie-container p{
+    font-size: 1rem;
+    font-weight: 200;
+    color: #ffffffbe;
+}
+
+.cast-movie-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.cast{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.actor-img-container{
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+.actor-container{
+    width: 40px;
+    height: 40px;
+
+}
+
+.actor-container img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.cast-movie-container h2{
+    font-size: 0.8rem;
+    font-weight: 200;
+    color: white;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.cast-movie-container p{
+    margin-top: 3px;
+    font-size: 0.7rem;
+    font-weight: 200;
+    color: #ffffffbe;
+    text-align: center;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/movie-style.css">
+    <link rel="stylesheet" href="./styles/movie-tablet.css" media="(min-width: 760px)">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+    <section class="movie-img-container">
+        <a href="./index.html" class="undo-icon"><span></span></a></> 
+        <img src="./assets/DrStrangePromo.jpg" alt="" class="movie-img">
+    </section>
+    <section class="info-movie-container">
+        <div class="title-movie-container">
+            <p class="main-title">Dr Strange</p>
+            <p class="subtitle">Dr Estraño</p>
+        </div>
+        <div class="categorie-container">
+            <div class="categirie-movie">
+                <p class="categorie">Accion</p>
+                <p class="pg">16+</p>
+                <p class="imdb">IMdb 8.5</p>
+            </div>
+            <div class="fav-container">
+                <button class="share"></button>
+                <button id="fav" class="fav" onclick="favClick()"></button>       
+            </div>
+        </div>
+        <section class="description-movie-container">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veniam dolorem sed sequi, laborum similique quam quo debitis laboriosam quae unde reiciendis a hic pariatur enim! Fugit natus tempora beatae?</p>
+        </section>
+        <section>
+            <h2 class="cast">Cast</h2>
+            <div class="cast-movie-container">
+                <div class="actor-img-container">
+                    <div class="actor-container"> 
+                        <img src="./assets/benedict.jpg" alt="">
+                    </div>
+                    <h2>Benedict Cumberbash</h2>
+                    <p>Dr. Strange</p>
+                </div>
+                <div class="actor-img-container">
+                    <div class="actor-container"> 
+                        <img src="./assets/chiweter.jpg" alt="">
+                    </div>
+                    <h2>Chiwetel Ejiofor</h2>
+                    <p>Karl Mordo</p>
+                </div>
+                <div class="actor-img-container">
+                    <div class="actor-container"> 
+                        <img src="./assets/rachel.jpg" alt="">
+                    </div>
+                    <h2>Rachel McAdams</h2>
+                    <p>Dr. Christine Palmer</p>
+                </div>
+                <div class="actor-img-container">
+                    <div class="actor-container"> 
+                        <img src="./assets/wong.jpg" alt="">
+                    </div>
+                    <h2>Benedict Wong</h2>
+                    <p>Wong</p>
+                </div>
+                <div class="actor-img-container">
+                    <div class="actor-container"> 
+                        <img src="./assets/mads.jpg" alt="">
+                    </div>
+                    <h2>Mads Mikkelsen</h2>
+                    <p>Kaecilius</p>
+                </div>
+            </div>
+            
+        </section>
+        
+    </section>
+    </main>
+    <script>
+        function favClick(){
+            const favButton = document.getElementById('fav');
+
+            if(favButton.className === 'fav'){
+                favButton.className = 'fav-click';
+            } else {
+                favButton.className = 'fav';
+            }
+        };
+
+    </script>
+</body>
+</html>

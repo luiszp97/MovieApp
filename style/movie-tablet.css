@@ -1,0 +1,59 @@
+.undo-icon{
+    width: 40px;
+    height: 40px;
+}
+
+.undo-icon span{
+    width: 40px;
+    height: 20px;
+    margin: 8px 0 0 9px;
+}
+
+.info-movie-container{
+    top: 320px;
+}
+
+.main-title{
+    font-size: 3rem;
+}
+
+.subtitle{
+    font-size: 2rem;
+}
+
+.categirie-movie p{
+    font-size: 1.5rem;
+}
+
+.description-movie-container{
+    margin-top: 20px;
+}
+
+.description-movie-container p{
+    font-size: 1.5rem;
+}
+
+.cast{
+    font-size: 2rem;
+
+    margin: 20px 0px 20px 0px;
+}
+
+.cast-movie-container{
+    justify-content: space-evenly;
+}
+
+.actor-container{
+    width: 70px;
+    height: 70px;
+}
+
+.cast-movie-container h2{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.cast-movie-container p{
+    font-size: 1rem;
+}
+
