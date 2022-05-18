@@ -60,9 +60,9 @@ header{
 
 .info-movie-container{
     position: absolute;
-    top: 235px;
+    top: 290px;
     width: 100%;
-    height: 55%;
+    height: auto;
     padding: 0px 20px 0 20px;
 
     border-left: 1px solid #33698d;
@@ -84,13 +84,16 @@ header{
     color: white;
     text-align: center;
 
-    margin-top: 10px;
+    margin-top: 18px;
+    margin-bottom: 10px;
 }
 
 .subtitle{
     font-size: 1.2rem;
     font-weight: 500;
-    color: #C4C4C4;  
+    color: #C4C4C4; 
+    
+    margin-bottom: 10px;
 }
 
 .categorie-container{
@@ -100,6 +103,7 @@ header{
 
     width: 100%;
     margin-top: 10px;
+    margin-bottom: 15px;
 }
 
 .categirie-movie{
@@ -163,10 +167,12 @@ header{
 
 .description-movie-container{
     margin-top: 10px;
+    height: 120px;
+    overflow-y: auto;
 }
 
 .description-movie-container p{
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 200;
     color: #ffffffbe;
 }
@@ -175,20 +181,23 @@ header{
     display: flex;
     width: 100%;
     justify-content: flex-start;
-    gap: 20px;
+    gap: 25px;
 
     overflow: auto;
     scroll-snap-type: x proximity;
     overscroll-behavior-x: contain;
+    
 }
-
+.cast-movie-container::-webkit-scrollbar{
+    display: none;
+}
 .cast{
     font-size: 1.5rem;
     font-weight: 700;
     color: white;
 
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 .actor-img-container{
@@ -198,8 +207,8 @@ header{
 }
 
 .actor-container{
-    width: 51px;
-    height: 50px;
+    width: 75px;
+    height: 80px;
 
 }
 
@@ -210,16 +219,16 @@ header{
 }
 
 .actor-name{
-    font-size: 0.8rem;
-    font-weight: 200;
+    font-size: 1rem;
+    font-weight: 500;
     color: white;
     text-align: center;
     margin-top: 8px;
 }
 
 .actor-papel{
-    margin-top: 3px;
-    font-size: 0.7rem;
+    margin-top: 4px;
+    font-size: 0.9rem;
     font-weight: 200;
     color: #ffffffbe;
     text-align: center;

@@ -1,5 +1,4 @@
 const Api_Tranding_Movie_Url = 'https://api.themoviedb.org/3/trending/movie/day?api_key=e9f1a36d7b4f761f8a4fbf4fe67eb64f'
-const Api_Tranding_Tv_Url = 'https://api.themoviedb.org/3/trending/tv/day?api_key=e9f1a36d7b4f761f8a4fbf4fe67eb64f'
 const Api_Categories_List_Url = 'https://api.themoviedb.org/3/genre/movie/list?api_key=e9f1a36d7b4f761f8a4fbf4fe67eb64f'
 const Api_Movie_Cast = 'https://api.themoviedb.org/3/movie/'
 const Img_Url ='https://image.tmdb.org/t/p/w500/';
@@ -12,10 +11,47 @@ async function movieDetails(){
     const data = await res.json();
     const results = data.results;
     
-    const res1 = await fetch(Api_Categories_List_Url);
-    const data1 = await res1.json();
-    console.log(data1)
+    results.find(item =>{
+        if(item.id === parseInt(hash)){
+           loadMovieDetails(item)
+        }
+    });
+   
+};
+
+function loadMovieDetails(item){
+    // console.log(item)
+    const posterPath = item.poster_path
+    const img = document.getElementById('movie-img');
+    const title = document.getElementById('main-title');
+    const subtitle = document.getElementById('subtitle');
+    const imdb = document.getElementById('imdb');
+    const movieDescription = document.getElementById('movie-description');
+
+    img.src = Img_Url + posterPath;
+    title.innerHTML = item.original_title;
+    subtitle.innerHTML = item.title;
+    imdb.innerHTML = `IMdb ${item.vote_average}`;
+    movieDescription.innerHTML = item.overview
     
+};
+
+async function movieCategorie(){
+    const res1 = await fetch(Api_Categories_List_Url);
+    const genres = await res1.json();
+    const genresFilter = genres.genres.slice(0,2);
+
+        genresFilter.forEach(element =>{
+            const categorie = document.getElementById("categirie-movie");
+            const categorie1 = document.createElement('p');
+            categorie1.className = 'categorie';
+            categorie1.innerHTML = element.name
+
+            categorie.appendChild(categorie1);
+        })
+};
+
+async function movieCast(){
     const resCast = await fetch(`${Api_Movie_Cast}${hash}/credits?${Api_Key}`);
     const allCrew = await resCast.json();
     const cast = allCrew.cast;
@@ -51,35 +87,7 @@ async function movieDetails(){
 
         mainContainer.appendChild(container);
     });
-    
-    
-    // console.log(cast);
-
-    results.find(item =>{
-        if(item.id === parseInt(hash)){
-           loadMovieDetails(item)
-        }
-    });
-   
-}
-movieDetails();
-
-function loadMovieDetails(item){
-    // console.log(item)
-    const posterPath = item.poster_path
-    const img = document.getElementById('movie-img');
-    const title = document.getElementById('main-title');
-    const subtitle = document.getElementById('subtitle');
-    const imdb = document.getElementById('imdb');
-    const movieDescription = document.getElementById('movie-description');
-
-    img.src = Img_Url + posterPath;
-    title.innerHTML = item.original_title;
-    subtitle.innerHTML = item.title;
-    imdb.innerHTML = `IMdb ${item.vote_average}`;
-    movieDescription.innerHTML = item.overview
- 
-}
+};
 
 function favClick(){
     const favButton = document.getElementById('fav');
@@ -90,5 +98,9 @@ function favClick(){
         favButton.className = 'fav';
     }
 };
+
+movieDetails();
+movieCategorie();
+movieCast();
 
 

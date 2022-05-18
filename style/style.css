@@ -106,6 +106,7 @@ header{
     border-radius: 5px 0 0 5px;
     width: 20px;
     height: 30px;
+    cursor: pointer;
 }
 .serch-icon{
     background-image: url(/MovieApp/assets/serch.png);
@@ -262,7 +263,10 @@ header{
     display: flex;
     justify-content: flex-start;
     align-items: center;
+
+
     height: 190px;
+
     overflow: auto;
     scroll-snap-type: x proximity;
     overscroll-behavior-x: contain;
