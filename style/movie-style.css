@@ -82,6 +82,7 @@ header{
     font-size: 2.5rem;
     font-weight: 700;
     color: white;
+    text-align: center;
 
     margin-top: 10px;
 }
@@ -106,7 +107,7 @@ header{
     justify-content: space-around;
     align-items: center;
 
-    width: 60%;
+    width: 90%;
 }
 
 .categirie-movie p{
@@ -172,8 +173,13 @@ header{
 
 .cast-movie-container{
     display: flex;
-    justify-content: center;
     width: 100%;
+    justify-content: flex-start;
+    gap: 20px;
+
+    overflow: auto;
+    scroll-snap-type: x proximity;
+    overscroll-behavior-x: contain;
 }
 
 .cast{
@@ -192,8 +198,8 @@ header{
 }
 
 .actor-container{
-    width: 40px;
-    height: 40px;
+    width: 51px;
+    height: 50px;
 
 }
 
@@ -203,7 +209,7 @@ header{
     border-radius: 10px;
 }
 
-.cast-movie-container h2{
+.actor-name{
     font-size: 0.8rem;
     font-weight: 200;
     color: white;
@@ -211,7 +217,7 @@ header{
     margin-top: 8px;
 }
 
-.cast-movie-container p{
+.actor-papel{
     margin-top: 3px;
     font-size: 0.7rem;
     font-weight: 200;
