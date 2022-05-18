@@ -9,7 +9,8 @@ async function trandingMovies (){
     const results = data.results;
 
     const err = document.getElementById("error");
-        
+    location.hash = '#Home' 
+
     if(res.status !== 200){
         err.innerHTML = `Error: ${res.status} ${data.status_message}`
     } else {
@@ -20,38 +21,44 @@ async function trandingMovies (){
 
             const trandingContainer = document.getElementById('most-pupulra-container');
             const div = document.createElement('div');
-            const aImg = document.createElement('a');
+            // const aImg = document.createElement('a');
             const img = document.createElement('img');
             const aTitle = document.createElement('a');
             const title = document.createElement('h2');
-
+            
             
             div.className = 'movie-popular-container';
             div.id = id;
-
-            aImg.href = './movie.html';
-
+            
+            // aImg.href = './movie.html';
+            
             img.src = Img_Url + posterPath;
             img.className = 'movie-popular-img';
-
-            aImg.appendChild(img);
-
+            // img.addEventListener('click', validacion(id))
+            
+            
+            // aImg.appendChild(img);
+            
             aTitle.href = './movie.html';
             aTitle.appendChild(title);
-
+            
             title.className = 'movie-tittle'
             title.innerHTML = MovieTitle;
-
-            div.appendChild(aImg);
+            
+            // div.appendChild(aImg);
+            div.appendChild(img)
             div.appendChild(aTitle);
+            
+            div.addEventListener('click', () =>{
+                location.hash = id
+            })
+           
 
             trandingContainer.appendChild(div)
+           
         });
-        console.log(data);
     }
 }
-
-trandingMovies();
 
 async function trandingTv(){
     const res = await fetch(Api_Tranding_Tv_Url);
@@ -74,5 +81,3 @@ async function trandingTv(){
 
     });
 }
-
-trandingTv();
