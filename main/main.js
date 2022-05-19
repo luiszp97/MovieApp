@@ -89,5 +89,3 @@ function serch(){
     const serch = location.hash = valor.value;
     location.href = '/MovieApp/serch.html'+ '#' + serch;
 }
-
-serchMovie();

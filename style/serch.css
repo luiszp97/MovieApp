@@ -1,0 +1,177 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+body{
+    background: linear-gradient(270deg, #4E4376 20%, #2B5876 100% );
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.733);
+    border-radius: 5px;
+    background: linear-gradient(270deg, #3c3260 20%, #234c68 100% );
+}
+
+.my-account-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notification-button-header{
+    display: none;
+}
+.logo-moviApp-container{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.name-app{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+.my-account{
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    align-self: center;
+    margin-right: 10px;
+}
+
+.title{
+    height: calc(14vh - 50px);
+    text-align: center;
+    padding-top: 20px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.results-container{
+    width: 100%;
+    height: 90vh;
+    margin-bottom: 24px;
+}
+
+.movies-main-container{
+    display: flex;
+    flex-direction: column;
+
+    width: 95%;
+    height: 100%;
+    gap: 10px;
+    margin: 0 10px 0 10px;
+
+    overflow: scroll;
+}
+
+.movie-container{
+    display: flex;
+    background-color: #ffffff18;
+    border-radius:  20px;
+}
+
+.movie-img-container{
+    width: 150px;
+    height: 170px;
+    padding: 10px;
+}
+.movie-container img{
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 20px;
+}
+
+.movie-details-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 5px;
+    width: calc(100% - 151px);
+}
+
+.title-container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.movie-title{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.categorie{
+    height: 20px;
+
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+
+    background-color: #ffffff44;
+    padding: 3px 7px 3px 7px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 30%);
+
+}
+ .movie-description{
+     text-align: justify;
+     font-size: 1rem;
+     font-weight: 500;
+     color: #ffffffbe;
+
+     height: 80px;
+
+     overflow-y: scroll;
+ }
+
+ .more{
+     margin-bottom: 10px;
+     border-radius: 5px;
+     background-color:#8fcef88f;
+     color: rgb(0, 0, 0);
+     font-weight: bold;
+     border: none;
+     padding: 2px 0;
+     cursor: pointer;
+ }
+
+ .more:hover{
+    background-color:#629ec58f;
+ }
+.vacio{
+    height: 6vh;
+}
+footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(270deg, #3c3260 20%, #234c68 100% );
+}
+
+.powerby{
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+}
