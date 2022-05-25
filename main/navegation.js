@@ -8,8 +8,7 @@ function navigator(){
         trandingMovies();
         trandingTv();
     } else if(parseInt(location.hash.slice(1))){
-        console.log(location.hash)
-        location.href = '/MovieApp/movie.html' + location.hash;
+        location.href = '/movie.html' + location.hash;
     } else{
         location.hash = '#Home'
     }

@@ -64,7 +64,7 @@ header{
 
 .results-container{
     width: 100%;
-    height: 90vh;
+    height: auto;
     margin-bottom: 24px;
 }
 
@@ -76,8 +76,6 @@ header{
     height: 100%;
     gap: 10px;
     margin: 0 10px 0 10px;
-
-    overflow: scroll;
 }
 
 .movie-container{

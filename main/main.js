@@ -87,5 +87,5 @@ async function trandingTv(){
 function serch(){
     const valor = document.getElementById('serch-button');
     const serch = location.hash = valor.value;
-    location.href = '/MovieApp/serch.html'+ '#' + serch;
+    location.href = '/serch.html'+ '#' + serch;
 }
