@@ -56,4 +56,5 @@ async function serchMovie(){
         mainContainer.appendChild(movieContainer);
     });
 }
+
 serchMovie();

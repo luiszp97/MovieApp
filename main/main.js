@@ -1,18 +1,24 @@
-const Api_Tranding_Movie_Url = 'https://api.themoviedb.org/3/trending/movie/day?api_key=e9f1a36d7b4f761f8a4fbf4fe67eb64f'
-const Api_Tranding_Tv_Url = 'https://api.themoviedb.org/3/trending/tv/day?api_key=e9f1a36d7b4f761f8a4fbf4fe67eb64f'
 const Img_Url ='https://image.tmdb.org/t/p/w500/';
+const Api_Key = 'e9f1a36d7b4f761f8a4fbf4fe67eb64f'
 
+
+const api = axios.create({
+    baseURL: 'https://api.themoviedb.org/3/',
+    headers : {'Content-Type': 'aplication/json;charset=utf-8'},
+    params:{
+        'api_key': Api_Key,
+    }
+})
 
 async function trandingMovies (){
-    const res = await fetch(Api_Tranding_Movie_Url);
-    const data = await res.json();
+    const  {data, status, status_message} = await api.get('trending/movie/day')
     const results = data.results;
-
+    
     const err = document.getElementById("error");
-    location.hash = '#Home' 
+    location.hash = '#home' 
 
-    if(res.status !== 200){
-        err.innerHTML = `Error: ${res.status} ${data.status_message}`
+    if(status !== 200){
+        console.log(`Error: ${status} ${status_message}`) 
     } else {
         results.forEach(element => {
             const posterPath = element.poster_path;
@@ -30,14 +36,8 @@ async function trandingMovies (){
             div.className = 'movie-popular-container';
             div.id = id;
             
-            // aImg.href = './movie.html';
-            
             img.src = Img_Url + posterPath;
-            img.className = 'movie-popular-img';
-            // img.addEventListener('click', validacion(id))
-            
-            
-            // aImg.appendChild(img);
+            img.className = 'movie-popular-img'; 
             
             aTitle.href = './movie.html';
             aTitle.appendChild(title);
@@ -45,7 +45,7 @@ async function trandingMovies (){
             title.className = 'movie-tittle'
             title.innerHTML = MovieTitle;
             
-            // div.appendChild(aImg);
+           
             div.appendChild(img)
             div.appendChild(aTitle);
             
@@ -61,8 +61,8 @@ async function trandingMovies (){
 }
 
 async function trandingTv(){
-    const res = await fetch(Api_Tranding_Tv_Url);
-    const data = await res.json();
+    const {data} = await api.get('trending/tv/day');
+    
     const tvData = data.results;
 
     tvData.forEach(element => {
@@ -81,8 +81,6 @@ async function trandingTv(){
 
     });
 }
-
-
 
 function serch(){
     const valor = document.getElementById('serch-button');

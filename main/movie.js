@@ -1,15 +1,21 @@
-const Api_Tranding_Movie_Url = 'https://api.themoviedb.org/3/trending/movie/day?api_key=e9f1a36d7b4f761f8a4fbf4fe67eb64f'
-const Api_Categories_List_Url = 'https://api.themoviedb.org/3/genre/movie/list?api_key=e9f1a36d7b4f761f8a4fbf4fe67eb64f'
-const Api_Movie_Cast = 'https://api.themoviedb.org/3/movie/'
 const Img_Url ='https://image.tmdb.org/t/p/w500/';
-const Api_Key = 'api_key=e9f1a36d7b4f761f8a4fbf4fe67eb64f'
+const Api_Key = 'e9f1a36d7b4f761f8a4fbf4fe67eb64f'
+
+const api = axios.create({
+    baseURL: 'https://api.themoviedb.org/3/',
+    headers : {'Content-Type': 'aplication/json;charset=utf-8'},
+    params:{
+        'api_key': Api_Key,
+    }
+})
 
 const hash = location.hash.slice(1);
 
 async function movieDetails(){
-    const res = await fetch(Api_Tranding_Movie_Url);
-    const data = await res.json();
+    const {status, data} = await api.get('trending/movie/day');
     const results = data.results;
+
+    // const data = await res.json();
     
     results.find(item =>{
         if(item.id === parseInt(hash)){
@@ -20,7 +26,7 @@ async function movieDetails(){
 };
 
 function loadMovieDetails(item){
-    // console.log(item)
+
     const posterPath = item.poster_path
     const img = document.getElementById('movie-img');
     const title = document.getElementById('main-title');
@@ -37,9 +43,8 @@ function loadMovieDetails(item){
 };
 
 async function movieCategorie(){
-    const res1 = await fetch(Api_Categories_List_Url);
-    const genres = await res1.json();
-    const genresFilter = genres.genres.slice(0,2);
+    const {data} = await api.get('genre/movie/list');
+    const genresFilter = data.genres.slice(0,2);
 
         genresFilter.forEach(element =>{
             const categorie = document.getElementById("categirie-movie");
@@ -52,10 +57,8 @@ async function movieCategorie(){
 };
 
 async function movieCast(){
-    const resCast = await fetch(`${Api_Movie_Cast}${hash}/credits?${Api_Key}`);
-    const allCrew = await resCast.json();
-    const cast = allCrew.cast;
-   
+    const {data} = await api.get(`movie/${hash}/credits`)
+    const cast = data.cast;
     const castFirst = cast.slice(0,10)
 
     castFirst.forEach(element => {
@@ -99,8 +102,14 @@ function favClick(){
     }
 };
 
+async function prueba(){
+    const {data} = await api.get('/genre/movie/list');
+    console.log(data);
+}
+
 movieDetails();
 movieCategorie();
 movieCast();
+prueba()
 
 
