@@ -15,31 +15,36 @@
     <main>
     <section class="movie-img-container">
         <a href="./index.html" class="undo-icon"><span></span></a></> 
-        <img alt="" class="movie-img" id="movie-img">
+        <img alt="" class="movie-img movie-img--loading" id="movie-img">
     </section>
     <section class="info-movie-container">
         <div class="title-movie-container">
-            <p class="main-title" id="main-title"></p>
-            <p class="subtitle" id="subtitle"></p>
+            <p class="main-title main-title--loading" id="main-title"></p>
+            <p class="subtitle subtitle--loading" id="subtitle"></p>
         </div>
-        <div class="categorie-container" >
+        <div class="categorie-container categorie-container--loading" id="categorie-container" >
             <div class="categirie-movie" id="categirie-movie">
               
-                <p class="pg">16+</p>
-                <p class="imdb" id="imdb"></p>
+                <p class="pg-h" id="pg">16+</p>
+                <p class="imdb-h" id="imdb"></p>
             </div>
             <div class="fav-container">
                 <button class="share"></button>
                 <button id="fav" class="fav" onclick="favClick()"></button>       
             </div>
         </div>
-        <section class="description-movie-container">
+        <section class="description-movie-container description-movie-container--loading" id="description-movie-container">
                 <p id="movie-description"></p>
         </section>
         <section>
             <h2 class="cast">Cast</h2>
             <div class="cast-movie-container" id="cast-movie-container">
-
+                <div class="actor-img-container--loading">    
+                </div>
+                <div class="actor-img-container--loading">   
+                </div>
+                <div class="actor-img-container--loading">
+                </div>
             </div>   
         </section>
         

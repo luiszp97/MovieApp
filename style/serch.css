@@ -173,3 +173,25 @@ footer{
     font-weight: 700;
     color: white;
 }
+
+.movie-container--loading{
+    width: 95%;
+    height: 150px;
+    align-self: center;
+    background-color: #ffffff18;
+    animation: loading-skeleton infinite 1.5s;
+}
+
+@keyframes loading-skeleton{
+    0%, 100%{
+        opacity: 100%;
+    }
+    50%{
+        opacity: 0%;
+    }
+}
+
+
+.disclaimer{
+    display: none;
+}

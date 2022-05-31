@@ -30,7 +30,12 @@ header{
 }
 
 .most-popular-main-container{
-    height: 180px;
+    height: 250px;
+}
+
+.movie-tittle{
+    height: 50px;
+    font-size: 1.8rem;
 }
 
 .most-pupulra-container{
@@ -40,12 +45,6 @@ header{
 .movie-popular-container{
     height: auto;
     width: 50vw;
-}
-
-.movie-popular-img{
-    position: absolute;
-    top: -18vh;
-    
 }
 
 .notification-button{

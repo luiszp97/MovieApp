@@ -1,4 +1,4 @@
-const Img_Url ='https://image.tmdb.org/t/p/w500/';
+const Img_Url ='https://image.tmdb.org/t/p/w500';
 const Api_Key = 'e9f1a36d7b4f761f8a4fbf4fe67eb64f'
 
 
@@ -10,16 +10,37 @@ const api = axios.create({
     }
 })
 
+const options = {
+    root: document.getElementById('most-popular-main-container'),
+};
+const options1 = {
+    root: document.getElementById('movie-uncoming-main-container'),
+};
+
+const callback = (entries, lazyLoader) => {
+        entries.forEach (entry => {
+            if(entry.isIntersecting){
+                const url = entry.target.getAttribute('data-img');
+                entry.target.setAttribute('src', url)
+            }
+            
+        }) 
+    }
+
+const lazyLoaderTranding = new IntersectionObserver(callback, options);
+const lazyLoaderTv = new IntersectionObserver(callback, options1)
+
 async function trandingMovies (){
     const  {data, status, status_message} = await api.get('trending/movie/day')
     const results = data.results;
-    
-    const err = document.getElementById("error");
+    const container = document.getElementById('most-pupulra-container')
+
     location.hash = '#home' 
 
     if(status !== 200){
         console.log(`Error: ${status} ${status_message}`) 
     } else {
+        container.innerHTML = '';
         results.forEach(element => {
             const posterPath = element.poster_path;
             const MovieTitle = element.original_title;
@@ -32,11 +53,11 @@ async function trandingMovies (){
             const aTitle = document.createElement('a');
             const title = document.createElement('h2');
             
-            
             div.className = 'movie-popular-container';
             div.id = id;
             
-            img.src = Img_Url + posterPath;
+            img.setAttribute('alt', MovieTitle);
+            img.setAttribute('data-img', `${Img_Url}${posterPath}`);
             img.className = 'movie-popular-img'; 
             
             aTitle.href = './movie.html';
@@ -50,9 +71,10 @@ async function trandingMovies (){
             div.appendChild(aTitle);
             
             div.addEventListener('click', () =>{
-                location.hash = id
+                location.hash = id    
             })
            
+            lazyLoaderTranding.observe(img);
 
             trandingContainer.appendChild(div)
            
@@ -62,9 +84,10 @@ async function trandingMovies (){
 
 async function trandingTv(){
     const {data} = await api.get('trending/tv/day');
+    const container = document.getElementById('test')
     
     const tvData = data.results;
-
+    container.innerHTML = '';
     tvData.forEach(element => {
         const urlPoster = element.poster_path;
         const container = document.getElementById('test');
@@ -73,9 +96,12 @@ async function trandingTv(){
         div.className = 'movie-uncoming-container'
         const img = document.createElement('img');
         img.className = 'movie-uncoming-img'
-        img.src = Img_Url + urlPoster;
+        img.setAttribute('data-img', `${Img_Url}${urlPoster}`);
+        img.setAttribute('alt', element.name)
 
         div.appendChild(img)
+
+        lazyLoaderTv.observe(img);
 
         container.appendChild(div)
 

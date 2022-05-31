@@ -7,40 +7,68 @@ const api = axios.create({
     params:{
         'api_key': Api_Key,
     }
-})
+});
+
+const options = {
+    root: document.getElementById('cast-movie-container'),
+};
+
+const callback = (entries, lazyLoader) => {
+        entries.forEach (entry => {
+            if(entry.isIntersecting){
+                const url = entry.target.getAttribute('data-img');
+                entry.target.setAttribute('src', url)
+            }
+            
+        }) 
+    };
+
+const lazyLoader = new IntersectionObserver(callback, options);
 
 const hash = location.hash.slice(1);
 
 async function movieDetails(){
-    const {status, data} = await api.get('trending/movie/day');
-    const results = data.results;
+    const {status, data} = await api.get(`/movie/${hash}`);
 
-    // const data = await res.json();
-    
-    results.find(item =>{
-        if(item.id === parseInt(hash)){
-           loadMovieDetails(item)
-        }
-    });
-   
-};
-
-function loadMovieDetails(item){
-
-    const posterPath = item.poster_path
+    const posterPath = data.poster_path
     const img = document.getElementById('movie-img');
     const title = document.getElementById('main-title');
     const subtitle = document.getElementById('subtitle');
+    const pg = document.getElementById('pg');
     const imdb = document.getElementById('imdb');
+    const descriptionContainer = document.getElementById('description-movie-container');
     const movieDescription = document.getElementById('movie-description');
+    const categorieContainer = document.getElementById('categorie-container');
+    
 
     img.src = Img_Url + posterPath;
-    title.innerHTML = item.original_title;
-    subtitle.innerHTML = item.title;
-    imdb.innerHTML = `IMdb ${item.vote_average}`;
-    movieDescription.innerHTML = item.overview
+    img.setAttribute('alt', `${data.original_title}`)
+
+    title.innerHTML = data.original_title;
+
+    subtitle.innerHTML = data.original_title;
+
+    imdb.innerHTML = `IMdb ${data.vote_average}`;
+
+    movieDescription.innerHTML = data.overview;
+
+
+    if(img.src.startsWith('https')){
+        img.className = 'movie-img';
+        title.className = 'main-title';
+        categorieContainer.className = 'categorie-container';
+        pg.className = 'pg';
+        imdb.className = 'imdb';
+        descriptionContainer.className = 'description-movie-container';
+    };
+
     
+   
 };
+
+// function loadMovieDetails(item){
+    
+// };
 
 async function movieCategorie(){
     const {data} = await api.get('genre/movie/list');
@@ -60,10 +88,10 @@ async function movieCast(){
     const {data} = await api.get(`movie/${hash}/credits`)
     const cast = data.cast;
     const castFirst = cast.slice(0,10)
-
+    const mainContainer = document.getElementById('cast-movie-container');
+    mainContainer.innerHTML = '';  
     castFirst.forEach(element => {
         
-        const mainContainer = document.getElementById('cast-movie-container');
         const container = document.createElement('div');
         const div = document.createElement('div');
         const imgActor = document.createElement('img');
@@ -74,7 +102,8 @@ async function movieCast(){
 
         div.className = 'actor-container';
 
-        imgActor.src = `${Img_Url}${element.profile_path}`
+        imgActor.setAttribute('data-img', `${Img_Url}${element.profile_path}`); 
+        imgActor.setAttribute('alt', `${element.name}`)
 
         actorName.className = 'actor-name'
         actorName.innerHTML = element.name;
@@ -88,6 +117,7 @@ async function movieCast(){
         container.appendChild(actorName);
         container.appendChild(actorcharacter);
 
+        lazyLoader.observe(imgActor);
         mainContainer.appendChild(container);
     });
 };
@@ -104,7 +134,6 @@ function favClick(){
 
 async function prueba(){
     const {data} = await api.get('/genre/movie/list');
-    console.log(data);
 }
 
 movieDetails();
