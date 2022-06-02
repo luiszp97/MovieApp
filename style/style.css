@@ -274,7 +274,7 @@ header{
     overflow-x: scroll;
     scroll-snap-type: x proximity;
     overscroll-behavior-x: contain;
-    cursor: pointer;
+    
 }
 
 .movie-uncoming-main-container::-webkit-scrollbar {
@@ -299,6 +299,8 @@ header{
     border: 2px solid black;
     border-radius: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.454);
+
+    cursor: pointer;
 }
 
 footer{

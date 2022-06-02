@@ -29,9 +29,13 @@ async function serchMovie(){
     const mainContainer = document.getElementById('main-container');
    
     if(results.length === 0){
-        console.log('lo sentimos no encontramos coincidencias')
+
+        console.log('lo sentimos no encontramos coincidencias');
+
     } else {
+
         mainContainer.innerHTML = '';
+
         results.forEach(element => {    
             const movieContainer = document.createElement('div');
             const movieImgContainer = document.createElement('div');
@@ -56,6 +60,21 @@ async function serchMovie(){
     
             img.setAttribute('data-img', `${Img_Url}${element.poster_path}`);
             img.setAttribute('alt', `${element.title}`)
+
+
+            img.addEventListener('error', ()=>{
+                movieImgContainer.innerHTML = '';
+
+                let div = document.createElement('div');
+                let title = document.createElement('p');
+
+                title.innerHTML = element.title;
+
+                div.setAttribute('class', 'img-error');
+                div.appendChild(title);
+
+                movieImgContainer.appendChild(div);
+            });
             
             movieTitle.innerHTML = element.title;
             
@@ -91,3 +110,9 @@ function movie (id){
 }
 
 serchMovie();
+
+function y (){
+    const x = document.forms['serch-container'];
+    console.log(x)
+    
+}

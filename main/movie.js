@@ -42,7 +42,8 @@ async function movieDetails(){
     
 
     img.src = Img_Url + posterPath;
-    img.setAttribute('alt', `${data.original_title}`)
+    
+    img.setAttribute('alt', `${data.original_title}`);
 
     title.innerHTML = data.original_title;
 
