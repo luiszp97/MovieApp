@@ -69,6 +69,8 @@ header{
     margin-bottom: 24px;
 }
 
+
+
 .movies-main-container{
     display: flex;
     flex-direction: column;
@@ -190,6 +192,11 @@ footer{
     background: linear-gradient(270deg, #3c3260 20%, #234c68 100% );
 }
 
+.footer--error{
+    position: absolute;
+    bottom: 0px;
+}
+
 .powerby{
     text-decoration: none;
     font-size: 1.3rem;
@@ -207,6 +214,41 @@ footer{
 
 .disclaimer{
     display: none;
+}
+
+
+/* ERROR DE BUSQUEDA */
+
+.main-container--error{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: calc(90vh - 160px);
+
+    padding: 0px 10px;
+}
+
+.error-img-container{
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 150px;
+    height: 200px;
+}
+
+.img-error{
+    width: 150px;
+    height: 170px;
+}
+
+.message-error{
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: 700;
+    color: white;
 }
 
 /* ANIMACION */

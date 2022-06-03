@@ -29,23 +29,50 @@ async function serchMovie(serch){
     const mainContainer = document.getElementById('main-container');
    
     if(results.length === 0){
+        mainContainer.innerHTML = '';
 
-        console.log('lo sentimos no encontramos coincidencias');
+        mainContainer.className = 'main-container--error'
+        document.getElementById('footer').className='footer--error'
+
+        let containerImgError = document.createElement('div');
+        containerImgError.setAttribute('class', 'error-img-container');
+
+        let imgError = document.createElement('img');
+        imgError.setAttribute('class', 'img-error');
+        imgError.setAttribute('src', '/assets/errores.png');
+
+        containerImgError.appendChild(imgError);
+
+        
+        let div = document.createElement('div');
+        div.setAttribute('class', 'message-error-container');
+
+        let p = document.createElement('p');
+        p.setAttribute('class', 'message-error');
+        p.innerHTML = `Lo sentimos no tenemos resultados para " ${serch} "`;
+        
+        div.appendChild(p);
+
+        mainContainer.appendChild(containerImgError);
+        mainContainer.appendChild(div);
+        // console.log('lo sentimos no encontramos coincidencias');
 
     } else {
 
         mainContainer.innerHTML = '';
+        mainContainer.className= 'movies-main-container';
+        document.getElementById('footer').removeAttribute('class');
 
         results.forEach(element => {    
             const movieContainer = document.createElement('div');
             const movieImgContainer = document.createElement('div');
-            const img = document.createElement('img')
-            const movieDetails = document.createElement('div');
             const titleContainer = document.createElement('div');
+            const movieDetails = document.createElement('div');
+            const img = document.createElement('img')
+            const button = document.createElement('button');
             const movieTitle = document.createElement('h2');
             const categorie = document.createElement('p');
             const movieDescription = document.createElement('p');
-            const button = document.createElement('button');
     
             movieContainer.className = 'movie-container';
             movieImgContainer.className = 'movie-img-container';
@@ -99,17 +126,12 @@ async function serchMovie(serch){
             mainContainer.appendChild(movieContainer);
 
             lazyLoader.observe(img);
-            const btn = document.getElementById(button.id);
-            btn.addEventListener('click', () => movie(button.id));
+            
+            document.getElementById(button.id).addEventListener('click', () => location.href = `/movie.html#${button.id}`);
         });
     }
 }
 
-function movie (id){
-    location.href = `/movie.html#${id}`
-}
-
-serchMovie(serch);
 
 const serch1 = document.getElementById('serch-container').addEventListener('submit', (e)=>{
     e.preventDefault();
@@ -120,4 +142,6 @@ const serch1 = document.getElementById('serch-container').addEventListener('subm
 
 function back(){
     history.back();
-}
+};
+
+serchMovie(serch);
