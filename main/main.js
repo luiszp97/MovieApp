@@ -58,9 +58,9 @@ async function trandingMovies (){
             
             img.setAttribute('alt', MovieTitle);
             img.setAttribute('data-img', `${Img_Url}${posterPath}`);
+            img.onclick = () => serchTranding(id);
             img.className = 'movie-popular-img'; 
             
-            aTitle.href = './movie.html';
             aTitle.appendChild(title);
             
             title.className = 'movie-tittle'
@@ -108,8 +108,32 @@ async function trandingTv(){
     });
 }
 
-function serch(){
-    const valor = document.getElementById('serch-button');
-    const serch = location.hash = valor.value;
-    location.href = '/serch.html'+ '#' + serch;
+async function movieCategorie(){
+    const {data} = await api.get('genre/movie/list');
+        console.log(data)
+        data.genres.forEach(element =>{
+            console.log(element)
+            const categorie = document.getElementById("categori-list-container");
+            const categorie1 = document.createElement('a');
+            categorie1.className = 'name-category';
+            categorie1.setAttribute('href', `/categories.html#${element.id}`)
+            categorie1.innerHTML = element.name
+
+            categorie.appendChild(categorie1);
+        })
+};
+
+const serchInput = document.getElementById('serch-container').addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const valor = document.getElementById('serch-input');
+    const serchh = location.hash = valor.value;
+    location.href = '/serch.html'+ '#' + serchh;
+})
+
+
+
+function serchTranding(id){
+    location.href = `/movie.html#${id}`;
 }
+
+movieCategorie();

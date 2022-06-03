@@ -67,10 +67,6 @@ async function movieDetails(){
    
 };
 
-// function loadMovieDetails(item){
-    
-// };
-
 async function movieCategorie(){
     const {data} = await api.get('genre/movie/list');
     const genresFilter = data.genres.slice(0,2);
@@ -133,13 +129,11 @@ function favClick(){
     }
 };
 
-async function prueba(){
-    const {data} = await api.get('/genre/movie/list');
+function back(){
+    history.back();
 }
-
 movieDetails();
 movieCategorie();
 movieCast();
-prueba()
 
 

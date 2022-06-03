@@ -1,0 +1,217 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+body{
+    background: linear-gradient(270deg, #4E4376 20%, #2B5876 100% );
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.733);
+    border-radius: 5px;
+    background: linear-gradient(270deg, #3c3260 20%, #234c68 100% );
+}
+
+.my-account-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notification-button-header{
+    display: none;
+}
+.logo-moviApp-container{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.name-app{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+.my-account{
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    align-self: center;
+    margin-right: 10px;
+}
+
+.categories-container{
+    display: flex;
+    justify-content: flex-start;
+
+    gap: 8px;
+
+    margin: 20px 20px;
+
+    overflow: scroll;
+    scroll-snap-type: x proximity;
+    overscroll-behavior-x: contain;
+}
+
+.categorie{
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #ffffff18;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.categorie-title-container{
+    display: flex;
+    /* flex-direction: column; */
+    margin-left: 10%;
+}
+
+.back{
+    width: 30px;
+    height: 30px;
+
+    background-color: rgba(255, 255, 255, 0);
+    background-image: url(/assets/left.png);
+    background-size: cover;
+
+    border: none;
+}
+
+.categorie-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 20px;
+
+}
+
+.movies-main-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+
+    width: 80%;
+
+    place-items:inherit;
+
+}
+
+.movie-container{
+    width: 130px;
+    height: 170px;
+}
+
+.movie-container img {
+    width: 100%;
+    height: 100%;
+
+    border: 2px solid black;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.454);
+}
+
+footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    position: absolute;
+   
+    
+    width: 100%;
+    height: 53px;
+    background: linear-gradient(270deg, #3c3260 20%, #234c68 100% );
+    margin-top: 35px;
+   
+}
+
+.powerby{
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+}
+
+/* ANIMACION */
+
+.categorie--loading{
+    display: flex;
+    align-items: center;
+
+    width: 80px;
+    padding: 20px 40px;
+  
+    background-color: #ffffff18;
+
+    border-radius: 10px;
+    animation: loading-skeleton infinite 1.5s;
+}
+
+.categorie--loading:nth-child(2){
+    animation-delay: .2s;
+}
+.categorie--loading:nth-child(3){
+    animation-delay: .4s;
+}
+.categorie--loading:nth-child(3){
+    animation-delay: .6s;
+}
+
+.movie-container--loading{
+    width: 130px;
+    height: 170px;
+
+    background-color: #ffffff18;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.454);
+    animation: loading-skeleton infinite 1.5s;
+}
+
+.movie-container--loading:nth-child(2){
+   animation-delay: .2s;
+}
+
+.movie-container--loading:nth-child(4){
+    animation-delay: .2s;
+ }
+
+ .movie-container--loading:nth-child(6){
+    animation-delay: .2s;
+ }
+
+@keyframes loading-skeleton{
+    0%, 100%{
+        opacity: 100%;
+    }
+    50%{
+        opacity: 0%;
+    }
+}

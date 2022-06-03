@@ -1,6 +1,6 @@
 const Api_key = 'e9f1a36d7b4f761f8a4fbf4fe67eb64f';
 const Img_Url ='https://image.tmdb.org/t/p/w500';
-const serch = location.hash.slice(1);
+var serch = location.hash.slice(1);
 
 const api = axios.create({
     baseURL: 'https://api.themoviedb.org/3/',
@@ -23,7 +23,7 @@ const callback = (entries, lazyLoader) => {
 const lazyLoader = new IntersectionObserver(callback);
 
 
-async function serchMovie(){
+async function serchMovie(serch){
     const {data} = await api.get(`search/movie?&query=${serch}`)
     const results = data.results;
     const mainContainer = document.getElementById('main-container');
@@ -109,10 +109,15 @@ function movie (id){
     location.href = `/movie.html#${id}`
 }
 
-serchMovie();
+serchMovie(serch);
 
-function y (){
-    const x = document.forms['serch-container'];
-    console.log(x)
-    
+const serch1 = document.getElementById('serch-container').addEventListener('submit', (e)=>{
+    e.preventDefault();
+    let newSerch = document.getElementById('serch-input');
+    let url = location.hash = newSerch.value;
+    serchMovie(url);
+})
+
+function back(){
+    history.back();
 }

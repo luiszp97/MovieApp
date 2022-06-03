@@ -247,8 +247,11 @@ footer{
     width: 20px;
     height: 20px;
 
+    background-color: #ffffff00;
     background-image: url(/assets/left.png);
     background-size: cover;
+
+    border: none;
 
     cursor: pointer;
 }

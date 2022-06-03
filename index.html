@@ -32,7 +32,11 @@
             </span>
             <div class="notification-button"></div>
         </div>
-        <div class="class">
+        <form method="post" class="serch-container" id="serch-container" name="serch">
+            <input type="search"  class="serch-input" id="serch-input" placeholder="Serch your favorite movie" required> 
+            <input type="submit" class="serch-button" value="" >
+        </form>
+        <!-- <div class="class">
             <div class="serch-input-container">
                 <button type="submit" class="serch-icon-container" onclick="serch()">
                     <span class="serch-icon"></span>
@@ -43,7 +47,7 @@
                     <div role="button" id="serc-voice" class="serch-voice"></div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </section>
     <div class="titles-container">
         <h2 class="titles">Most Popular Movies</h2>
@@ -61,10 +65,10 @@
         </div>
     </section>
     <section class="categories-main-container">
-        <div class="categories-container">
+        <a class="categories-container" href="#category">
             <img src="/assets/Genres.svg" alt="" class="img-categorie">
             <h3 class="title-genres">Genres</h3>
-        </div>
+        </a>
         <div class="categories-container">
             <img src="/assets/tv-series-icon.svg" alt="" class="img-categorie">
             <h3 class="title-genres">TV series</h3>
@@ -88,6 +92,12 @@
             <div class="movie-uncoming-container movie-uncoming-container--loading"></div>
             <div class="movie-uncoming-container movie-uncoming-container--loading"></div>
         </div>
+        </div>
+    </section>
+    <section class="categorie" id="category">
+        <h1 class="genres-title">Generos</h1>
+        <div class="categori-list-container" id="categori-list-container">
+            
         </div>
     </section>
     <footer>
