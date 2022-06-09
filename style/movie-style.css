@@ -50,7 +50,7 @@ header{
 
 .undo-icon span{
     display: inline-block;
-    background: url(/assets/undo-alt-free-icon-font.svg);
+    background: url(./assets/undo-alt-free-icon-font.svg);
     background-size: contain;
     background-repeat: no-repeat;
 
@@ -163,20 +163,20 @@ header{
 }
 
 .fav-container .fav{
-    background: url(/assets/heart.svg);
+    background: url(./assets/heart.svg);
     background-size: cover;
     height: 20px;
    
 }
 
 .fav-container .fav-click{
-    background: url(/assets/heart-lleno.svg);
+    background: url(./assets/heart-lleno.svg);
     background-size: cover;
     height: 20px;
 }
     
 .fav-container .share{
-    background: url(/assets/share.svg);
+    background: url(./assets/share.svg);
     background-size: cover;
 }
 
