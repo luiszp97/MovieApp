@@ -86,7 +86,7 @@ header{
 
 .notification-button{
     cursor: pointer;
-    background-image: url(/assets/notification.png);
+    background-image: url(/MovieApp/assets/notification.png);
     background-size: cover;
     width: 20px;
     height: 20px;
@@ -125,7 +125,7 @@ header{
     height: 20px;
 
     background-color: #ffffff46;
-    background-image: url(/assets/serch.png);
+    background-image: url(/MovieApp/assets/serch.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
