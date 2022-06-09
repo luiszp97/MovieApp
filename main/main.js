@@ -116,7 +116,7 @@ async function movieCategorie(){
             const categorie = document.getElementById("categori-list-container");
             const categorie1 = document.createElement('a');
             categorie1.className = 'name-category';
-            categorie1.setAttribute('href', `/categories.html#${element.id}`)
+            categorie1.setAttribute('href', `./categories.html#${element.id}`)
             categorie1.innerHTML = element.name
 
             categorie.appendChild(categorie1);
