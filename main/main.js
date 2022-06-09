@@ -127,13 +127,13 @@ const serchInput = document.getElementById('serch-container').addEventListener('
     e.preventDefault();
     const valor = document.getElementById('serch-input');
     const serchh = location.hash = valor.value;
-    location.href = '/serch.html'+ '#' + serchh;
+    location.href = '/MovieApp/serch.html'+ '#' + serchh;
 })
 
 
 
 function serchTranding(id){
-    location.href = `/movie.html#${id}`;
+    location.href = `/MovieApp/movie.html#${id}`;
 }
 
 movieCategorie();
